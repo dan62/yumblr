@@ -38,7 +38,9 @@
             </button>
 
             <div class="modal-body">
-                <form [formGroup]="blogForm">
+
+                <div [formGroup]="blogForm">
+
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
                             <div class="form-group">
@@ -68,7 +70,9 @@
                             <button (click) = "create_blog_post()"  class="default-btn">Create Blog Post</button>
                         </div>
                     </div>
-                </form>
+
+                </div>
+                
             </div>
         </div>
     </div>

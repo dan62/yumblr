@@ -50,7 +50,7 @@ module.exports = function (app) {
     // 4. Delete Blog Post
     // status: Working
     app.route('/delete_blog_post')
-        .delete(blogs.delete_blog);
+        .post(blogs.delete_blog);
 
     // 5. Update Blog Post
     // status:

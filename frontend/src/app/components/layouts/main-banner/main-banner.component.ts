@@ -3,6 +3,7 @@ import { Component, OnInit} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 // Declaration of component template
 @Component({
