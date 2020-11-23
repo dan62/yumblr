@@ -8,7 +8,7 @@ exports.register = function (req, res) {
     } else {
         user_service.login(req.body, function (err, user_account_info) {
             if (err)
-                res.end(err);
+                res.send(err);
             res.end(user_account_info);
         })
     }
