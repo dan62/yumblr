@@ -1,0 +1,121 @@
+<section class="podcast-area ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <h2>Your Posts On Yumblr</h2>
+        </div>
+
+        <!--
+            <div class="overview-box">
+            <div class="overview-image">
+                <div class="image">
+                    <img src="assets/img/podcast-img1.jpg" alt="image">
+                </div>
+            </div>
+
+            <div class="overview-content">
+                <div class="content">
+                    <h3>{{blog.title}}</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Qu ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan facilisis.</p>
+                    <a href="#" class="default-btn">Read More</a>
+                </div>
+            </div>
+        </div> 
+    -->
+
+        <div class="overview-box" *ngFor="let blog of blog_posts;let i = index">
+            <div class="overview-content">
+                <div class="content">
+                    <h3>{{blog.title}}</h3>
+                    <p>{{blog.content}}</p>
+                    <a href="#" data-toggle="modal" data-target="#update_blog_modal" class="default-btn">Update</a>
+                    <a href="#" style="margin-left:30px" data-toggle="modal" data-target="#delete_blog_modal"
+                        class="default-btn">Delete</a>
+                </div>
+            </div>
+
+            <div class="overview-image">
+                <div class="image">
+                    <img src="assets/img/fish.jpeg" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Update Blog Modal -->
+<div class="modal fade contactModal" id="update_blog_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+            <div class="modal-body">
+                <form id="contactForm">
+                    <div class="row">
+                        <h3 style="padding:10px">Update Blog Post</h3>
+                        <div class="col-lg-12 col-md-12">
+                            <div class="form-group">
+                                <input type="text" name="title" id="title" class="form-control" placeholder="Title">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="form-group">
+                                <input type="text" name="status" id="status" class="form-control" placeholder="Status">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="form-group">
+                                <input type="text" name="category" id="category" class="form-control"
+                                    placeholder="Category">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="form-group">
+                                <textarea name="content" class="form-control" id="content" cols="30" rows="5"
+                                    placeholder="Content"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <button type="submit" class="default-btn">Update Blog Post</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Blog Modal -->
+<div class="modal fade contactModal" id="delete_blog_modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+            <div class="modal-body">
+                <form id="contactForm">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-md-12">
+                            <h3>Are you sure you would like to delete this blog post?</h3>
+                        </div>
+
+                        <div style="float:right; margin-top:20px;">
+                            <button type="submit" class="default-btn">Yes</button>
+                            <button style="margin-left:10px" type="submit" class="default-btn">Cancel</button>
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

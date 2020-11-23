@@ -1,0 +1,34 @@
+<section id="blog" class="blog-area pb-70">
+    <div class="container">
+        <div class="section-title">
+            <span class="sub-title">Trending Blog Posts</span>
+            <h2>Keep upto date with the latest quizine </h2>
+        </div>
+
+        
+        <div class="row" *ngFor="let blog of blog_posts;let i = index">
+
+            <!-- Blog Card -->
+            <div class="col-lg-6 col-md-12">
+                <div class="single-blog-post">
+                    <div class="post-image">
+                        <a routerLink="/blog-details">
+                            <img src="assets/img/foo_placeholder.jpg" alt="image">
+                        </a>
+                    </div>
+                    <div class="post-content">
+                        <ul class="post-meta">
+                            <li>
+                                <a routerLink="/">{{blog.category}}</a>
+                            </li>
+                            <li>{{blog.status}}</li>
+                        </ul>
+                        <h3><a routerLink="/blog-details">{{blog.title}}</a></h3>
+                        <p>{{blog.content}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,34 @@
+<div id="home" class="main-banner">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-12">
+                <div class="main-banner-content">
+                    <h1>For those yummy moments</h1>
+                    <p>Ever wished the taste of a meal could stay forever? Meet Yumblr the number one blogging platform
+                        to showcase your food experiances</p>
+
+                    <div *ngIf="user_id == null">
+                        <input formControlName="email"  id="email" type="email" class="input-newsletter" placeholder="Enter your email">
+                        <button class="default-btn" (click)="create_account()">Join Yumblr now</button>
+                    </div>
+                    <div *ngIf="user_id != null">
+                        <button class="default-btn" (click)="logout()">Logout</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-12">
+                <div class="main-banner-image">
+                    <img style="height:600px" src="assets/img/food_banner_1.jpeg" data-speed="0.02" data-revert="true"
+                        class="main-image wow fadeInUp" alt="image">
+
+                    <div class="banner-shape" data-speed="0.02" data-revert="true">
+                        <img src="assets/img/line-bg1.png" class="wow fadeInLeft" alt="image">
+                        <img src="assets/img/line-bg2.png" class="wow fadeInRight" alt="image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
