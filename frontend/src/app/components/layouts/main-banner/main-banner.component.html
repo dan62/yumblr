@@ -8,7 +8,12 @@
                         to showcase your food experiances</p>
 
                     <div *ngIf="user_id == null">
-                        <input formControlName="email"  id="email" type="email" class="input-newsletter" placeholder="Enter your email">
+                        
+                        <div [formGroup]="registerForm">
+                            <input formControlName="email" id="email" type="email" class="input-newsletter"
+                            placeholder="Enter your email">
+                        </div>
+
                         <button class="default-btn" (click)="create_account()">Join Yumblr now</button>
                     </div>
                     <div *ngIf="user_id != null">
