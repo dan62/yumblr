@@ -12,9 +12,9 @@
                         <div [formGroup]="registerForm">
                             <input formControlName="email" id="email" type="email" class="input-newsletter"
                             placeholder="Enter your email">
+                            <button style="margin-left:20px" class="default-btn" (click)="create_account()">Join Yumblr now</button>
                         </div>
-
-                        <button class="default-btn" (click)="create_account()">Join Yumblr now</button>
+                       
                     </div>
                     <div *ngIf="user_id != null">
                         <button class="default-btn" (click)="logout()">Logout</button>
