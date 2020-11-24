@@ -5,7 +5,7 @@ Yumblr is a Blogging website primarily focused on a community of people that lik
 Please follow the following steps to use my system and understand how it works
 
 1. Register for an Accout by entering username or email here
-![step 1](https://myajarn.com/sertis/1.png)
+![step 1](https://cselected.com/sertis/1.png)
 
 ## Tech Stack
 1. Angular 7 (Frontend)
