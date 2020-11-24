@@ -133,7 +133,7 @@ Blog.update_blog_post = function (blog_info, result) {
 
             if (blog_post.length > 0) {
 
-                sql.query(`UPDATE blog SET title=?, status=?, category=? content=? WHERE id = ?`, 
+                sql.query(`UPDATE blog SET title=?, status=?, category=?, content=? WHERE id = ?`, 
                 [title, status, category, content, blog_id], function (err, blog_post_updated) {
 
                     // Database error check
