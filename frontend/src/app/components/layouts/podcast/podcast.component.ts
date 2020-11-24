@@ -22,6 +22,7 @@ export class PodcastComponent implements OnInit {
   category: any;
   status: any;
   content: any;
+  blog_id: any;
 
   // Component Constructor
   constructor(
@@ -75,11 +76,17 @@ export class PodcastComponent implements OnInit {
       })
   }
 
-  update_blog(blog_id: any) {
+  // Function to set active blog id
+  set_blog_id(blog_id: any) {
+    this.blog_id = blog_id
+  }
+
+  // Function to update blog
+  update_blog() {
 
     this.title = this.blogForm.controls['title'].value;
     this.category = this.blogForm.controls['category'].value;
-    this.status = this.blogForm.controls['title'].value;
+    this.status = this.blogForm.controls['status'].value;
     this.content = this.blogForm.controls['content'].value;
 
     // API Headers
@@ -93,16 +100,20 @@ export class PodcastComponent implements OnInit {
     // POST parameters for API call
     const postParams = {
       author_id: this.user_id,
-      blog_id: blog_id
+      blog_id: this.blog_id,
+      title: this.title,
+      category: this.category,
+      status: this.status,
+      content: this.content
     };
 
     this.http.post("http://localhost:3000/update_blog_post", postParams, httpOptions)
       .subscribe(data => {
-
+        window.location.reload();
       })
   }
 
-  delete_blog(blog_id: any) {
+  delete_blog() {
 
     // API Headers
     const httpOptions = {
@@ -115,12 +126,12 @@ export class PodcastComponent implements OnInit {
     // POST parameters for API call
     const postParams = {
       author_id: this.user_id,
-      blog_id: blog_id
+      blog_id: this.blog_id
     };
 
     this.http.post("http://localhost:3000/delete_blog_post", postParams, httpOptions)
       .subscribe(data => {
-
+        window.location.reload();
       })
   }
 
