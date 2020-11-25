@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
+import { API_CONSTANTS } from '../../../services/constants';
 
 // Declaration of component 
 @Component({
@@ -48,11 +49,6 @@ export class NavbarComponent implements OnInit {
   create_blog_post() {
 
     // Get data from input feilds
-    /*this.title = document.getElementById("title").value;
-    this.category = document.getElementById("category").value;
-    this.status = document.getElementById("status").value;
-    this.content = document.getElementById("content").value;
-    */
    this.title = this.blogForm.controls['title'].value;
    this.category = this.blogForm.controls['category'].value;
    this.status = this.blogForm.controls['title'].value;
@@ -76,7 +72,7 @@ export class NavbarComponent implements OnInit {
     };
 
     // API call to server to retreive blog posts
-    this.http.post("http://localhost:3000/create_blog_post", postParams, httpOptions)
+    this.http.post(API_CONSTANTS.BASE_URL_TEST + "/create_blog_post", postParams, httpOptions)
       .subscribe(data => {
         console.log(data);
         window.location.reload();

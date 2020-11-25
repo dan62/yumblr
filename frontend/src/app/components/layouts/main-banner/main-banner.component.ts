@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { API_CONSTANTS } from '../../../services/constants';
 
 // Declaration of component template
 @Component({
@@ -67,7 +68,7 @@ export class MainBannerComponent implements OnInit {
     }
 
     // API call to server to generate user account
-    this.http.post<user_account>("http://localhost:3000/login", postParams, httpOptions)
+    this.http.post<user_account>(API_CONSTANTS.BASE_URL_TEST + "/login", postParams, httpOptions)
       .subscribe(data => {
         this.account_info = data.user_info;
         this.user_id = data.user_info.id;

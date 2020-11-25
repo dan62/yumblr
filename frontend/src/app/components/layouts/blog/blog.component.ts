@@ -1,6 +1,7 @@
 // Importing of necessary modules
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { API_CONSTANTS } from '../../../services/constants';
 
 // Declaration of component template
 @Component({
@@ -35,7 +36,7 @@ export class BlogComponent implements OnInit {
     }
 
     // API call to server to retreive blog posts
-    this.http.get<blog>("http://localhost:3000/list_blog_posts")
+    this.http.get<blog>(API_CONSTANTS.BASE_URL_TEST + "/list_blog_posts")
       .subscribe(data => {
         this.blog_posts = data.blogs
       })

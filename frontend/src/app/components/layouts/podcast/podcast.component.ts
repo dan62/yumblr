@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
+import { API_CONSTANTS } from '../../../services/constants';
 
 // Declaration of component template
 @Component({
@@ -65,7 +66,7 @@ export class PodcastComponent implements OnInit {
     }
 
     // API call to server to retreive blog posts
-    this.http.get<blog>("http://localhost:3000/list_blog_posts")
+    this.http.get<blog>(API_CONSTANTS.BASE_URL_TEST + "/list_blog_posts")
       .subscribe(data => {
 
         var user_id = parseInt(this.user_id)
@@ -107,7 +108,7 @@ export class PodcastComponent implements OnInit {
       content: this.content
     };
 
-    this.http.post("http://localhost:3000/update_blog_post", postParams, httpOptions)
+    this.http.post(API_CONSTANTS.BASE_URL_TEST + "/update_blog_post", postParams, httpOptions)
       .subscribe(data => {
         window.location.reload();
       })
@@ -129,7 +130,7 @@ export class PodcastComponent implements OnInit {
       blog_id: this.blog_id
     };
 
-    this.http.post("http://localhost:3000/delete_blog_post", postParams, httpOptions)
+    this.http.post(API_CONSTANTS.BASE_URL_TEST + "/delete_blog_post", postParams, httpOptions)
       .subscribe(data => {
         window.location.reload();
       })
